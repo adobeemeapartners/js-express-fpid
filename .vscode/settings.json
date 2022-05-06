@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/7a3c3f50-881a-480a-9314-4a6a4a6660eb/resourceGroups/sevcik-demo_group/providers/Microsoft.Web/sites/sevcik-demo",
+    "appService.deploySubpath": "."
+}

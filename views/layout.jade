@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://assets.adobedtm.com/4ef014d90ea4/3a0b49b01f30/launch-3fe915bafa9b-development.min.js") 
+    script.
+      alloy("sendEvent", {
+        xdm: {
+          "identityMap": {
+              "FPID": [{
+                  "id": "#{fpid}",
+                  "authenticatedState": "ambiguous",
+                  "primary": true
+              }]
+          }
+        }
+      });
+  body
+    block content
+
