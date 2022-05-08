@@ -1,8 +1,34 @@
 extends layout
-
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 First Party Cookie ID Demo
+  h2 About
+  p. 
+    The Adobe Experience Platform Web SDK assigns Adobe Experience Cloud IDs (ECIDs) to 
+    website visitors through the use of cookies, in order to track user behavior. 
+    To account for browser restrictions on cookie lifespans, you can opt to set and manage your own 
+    device identifiers instead. These are referred to as first-party device IDs (FPIDs). 
+  p. 
+    Read more here: #[a(href="https://experienceleague.adobe.com/docs/experience-platform/edge/identity/first-party-device-ids.html?lang=en" target="_blank") FPID Docs]
 
-  form(action="/", method="get")
-    button(type="submit") Reload the page 
+  h2 Instructions
+  ol 
+    li Open Browser Console (Alt+Cmd+c)
+    li Select Console
+    li In the Console Settings select Preserve log 
+    li Click Reload the page  
+    li Note the printed ECID in the console
+    li Navigate to Application tab
+    li Delete all cookies EXCEPT the FPID cookie
+    li Refresh the page 
+    li Note that the ECID has not changed
+    li Delete all cookies INCLUDING the FPID cookie 
+    li Note that the ECID has changed
+
+  
+  h2 FPID Cookie Value 
+  p #{fpid}
+
+  h2 ECID Cookie Value 
+  p
+    form(action="/", method="get")
+      button(type="submit") Read ECID cookie 
